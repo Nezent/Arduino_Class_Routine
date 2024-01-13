@@ -1,3 +1,5 @@
+
+
 #include <Wire.h>
 #include <RTClib.h>
 #include <LiquidCrystal_I2C.h>
@@ -19,7 +21,7 @@ void setup() {
 
   if (rtc.lostPower()) {
     Serial.println("RTC lost power, let's set the time!");
-    rtc.adjust(DateTime(F(_DATE), F(__TIME_)));
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
   lcd.backlight(); 
 }
